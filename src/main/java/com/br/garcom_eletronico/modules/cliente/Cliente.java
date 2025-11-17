@@ -1,10 +1,7 @@
 package com.br.garcom_eletronico.modules.cliente;
 
 import com.br.garcom_eletronico.modules.pedido.Pedido;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -24,5 +21,6 @@ public class Cliente {
 
     private LocalDateTime horaSaída;
 
+    @OneToMany
     private List<Pedido> pedidos;
 }

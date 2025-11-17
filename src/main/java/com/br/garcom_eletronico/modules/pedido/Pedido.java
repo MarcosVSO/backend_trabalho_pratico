@@ -1,6 +1,7 @@
 package com.br.garcom_eletronico.modules.pedido;
 
 import com.br.garcom_eletronico.modules.cliente.Cliente;
+import com.br.garcom_eletronico.modules.conta.Conta;
 import com.br.garcom_eletronico.modules.garcom.Garcom;
 import com.br.garcom_eletronico.modules.item_pedido.ItemPedido;
 import com.br.garcom_eletronico.modules.mesa.Mesa;
@@ -24,6 +25,9 @@ public class Pedido {
     private LocalDateTime dataPedido;
 
     private LocalDateTime horaEntrega;
+
+    @OneToOne
+    private Conta conta;
 
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL)
     private List<ItemPedido> itens;
