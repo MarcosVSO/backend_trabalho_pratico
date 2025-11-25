@@ -1,6 +1,11 @@
 package com.br.garcom_eletronico.modules.pagamento;
 
-public class Cheque  extends Pagamento{
+import jakarta.persistence.Entity;
+import lombok.Data;
+
+@Data
+@Entity
+public class Cheque extends Pagamento {
 
     private String numeroCheque;
 }

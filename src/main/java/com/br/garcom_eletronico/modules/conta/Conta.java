@@ -3,8 +3,10 @@ package com.br.garcom_eletronico.modules.conta;
 
 import com.br.garcom_eletronico.modules.pagamento.Pagamento;
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
+@Data
 public class Conta {
 
     @Id

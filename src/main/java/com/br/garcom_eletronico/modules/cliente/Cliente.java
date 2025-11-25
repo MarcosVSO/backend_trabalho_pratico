@@ -19,7 +19,7 @@ public class Cliente {
 
     private LocalDateTime horaChegada;
 
-    private LocalDateTime horaSaída;
+    private LocalDateTime horaSaida;
 
     @OneToMany
     private List<Pedido> pedidos;

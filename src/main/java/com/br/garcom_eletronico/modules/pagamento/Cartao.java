@@ -1,6 +1,11 @@
 package com.br.garcom_eletronico.modules.pagamento;
 
-public class Cartao extends Pagamento{
+import jakarta.persistence.Entity;
+import lombok.Data;
+
+@Data
+@Entity
+public class Cartao extends Pagamento {
 
     private String numeroCartao;
 }
