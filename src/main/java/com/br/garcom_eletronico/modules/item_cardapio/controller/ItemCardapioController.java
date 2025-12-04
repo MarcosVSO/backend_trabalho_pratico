@@ -41,5 +41,16 @@ public class ItemCardapioController {
     public void delete(@PathVariable Long id) {
         service.delete(id);
     }
+
+    @GetMapping("/por-categoria/{categoria}")
+    public List<ItemCardapioDTO> findByCategoria(@PathVariable String categoria) {
+        return service.findByCategoria(categoria);
+    }
+
+    @GetMapping("/mais-pedido")
+    public ItemCardapioDTO findItemMaisPedido() {
+        return service.findItemMaisPedido();
+    }
 }
+
 

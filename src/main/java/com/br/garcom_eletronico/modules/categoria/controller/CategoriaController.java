@@ -42,4 +42,3 @@ public class CategoriaController {
         service.delete(id);
     }
 }
-

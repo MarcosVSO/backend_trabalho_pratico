@@ -21,6 +21,9 @@ public class PedidoMapper {
         if (entity.getConta() != null) {
             dto.setContaId(entity.getConta().getId());
         }
+        if (entity.getMesa() != null) {
+            dto.setMesaId(entity.getMesa().getNumero());
+        }
         return dto;
     }
 

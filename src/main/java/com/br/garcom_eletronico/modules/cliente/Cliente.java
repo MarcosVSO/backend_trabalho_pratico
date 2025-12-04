@@ -4,6 +4,7 @@ import com.br.garcom_eletronico.modules.pedido.Pedido;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -16,6 +17,8 @@ public class Cliente {
     private Long id;
 
     private String nome;
+
+    private LocalDate dataNascimento;
 
     private LocalDateTime horaChegada;
 

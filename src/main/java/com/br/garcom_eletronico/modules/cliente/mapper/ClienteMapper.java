@@ -14,6 +14,7 @@ public class ClienteMapper {
         ClienteDTO dto = new ClienteDTO();
         dto.setId(entity.getId());
         dto.setNome(entity.getNome());
+        dto.setDataNascimento(entity.getDataNascimento());
         dto.setHoraChegada(entity.getHoraChegada());
         dto.setHoraSaida(entity.getHoraSaida());
         return dto;
@@ -26,6 +27,7 @@ public class ClienteMapper {
         Cliente entity = new Cliente();
         entity.setId(dto.getId());
         entity.setNome(dto.getNome());
+        entity.setDataNascimento(dto.getDataNascimento());
         entity.setHoraChegada(dto.getHoraChegada());
         entity.setHoraSaida(dto.getHoraSaida());
         return entity;
@@ -36,8 +38,8 @@ public class ClienteMapper {
             return;
         }
         entity.setNome(dto.getNome());
+        entity.setDataNascimento(dto.getDataNascimento());
         entity.setHoraChegada(dto.getHoraChegada());
         entity.setHoraSaida(dto.getHoraSaida());
     }
 }
-

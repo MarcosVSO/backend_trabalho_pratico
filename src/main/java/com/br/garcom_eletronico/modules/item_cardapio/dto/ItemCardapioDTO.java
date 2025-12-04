@@ -8,5 +8,8 @@ public class ItemCardapioDTO {
     private String ingredientes;
     private Float preco;
     private Boolean disponivelNaCozinha;
+    private Long categoriaId;
+    private String categoriaNome;
 }
+
 

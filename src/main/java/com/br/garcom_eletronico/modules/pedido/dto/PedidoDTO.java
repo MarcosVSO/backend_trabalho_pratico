@@ -11,5 +11,6 @@ public class PedidoDTO {
     private LocalDateTime dataPedido;
     private LocalDateTime horaEntrega;
     private Integer contaId;
+    private Integer mesaId;
 }
 

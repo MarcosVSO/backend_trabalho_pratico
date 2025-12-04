@@ -52,7 +52,7 @@ public class ContaService {
 
     private Conta getEntity(Integer id) {
         return repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Conta not found with id " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Conta não encontrada com id " + id));
     }
 
     private Pagamento resolvePagamento(Long pagamentoId) {
@@ -60,7 +60,6 @@ public class ContaService {
             return null;
         }
         return pagamentoRepository.findById(pagamentoId)
-                .orElseThrow(() -> new ResourceNotFoundException("Pagamento not found with id " + pagamentoId));
+                .orElseThrow(() -> new ResourceNotFoundException("Pagamento não encontrada com id " + pagamentoId));
     }
 }
-

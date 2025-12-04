@@ -8,6 +8,7 @@ import com.br.garcom_eletronico.modules.cliente.repository.ClienteRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -49,5 +50,26 @@ public class ClienteService {
         return repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Cliente not found with id " + id));
     }
+
+    public ClienteDTO sortearCliente() {
+        Cliente cliente = repository.findRandomCliente()
+                .orElseThrow(() -> new ResourceNotFoundException("No clients found"));
+        return mapper.toDto(cliente);
+    }
+
+    public List<ClienteDTO> findAniversariantes() {
+        LocalDate hoje = LocalDate.now();
+        int diaHoje = hoje.getDayOfMonth();
+        int mesHoje = hoje.getMonthValue();
+        
+        return repository.findAll()
+                .stream()
+                .filter(c -> c.getDataNascimento() != null 
+                        && c.getDataNascimento().getDayOfMonth() == diaHoje 
+                        && c.getDataNascimento().getMonthValue() == mesHoje)
+                .map(mapper::toDto)
+                .toList();
+    }
 }
+
 

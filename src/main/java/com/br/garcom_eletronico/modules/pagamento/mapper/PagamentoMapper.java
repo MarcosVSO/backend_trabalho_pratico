@@ -30,7 +30,5 @@ public class PagamentoMapper {
         if (dto == null || entity == null) {
             return;
         }
-        // Base entity has no mutable fields besides id.
     }
 }
-

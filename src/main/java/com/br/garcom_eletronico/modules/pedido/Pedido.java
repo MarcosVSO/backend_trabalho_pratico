@@ -29,6 +29,9 @@ public class Pedido {
     @OneToOne
     private Conta conta;
 
+    @ManyToOne
+    private Mesa mesa;
+
     @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL)
     private List<ItemPedido> itens;
 }

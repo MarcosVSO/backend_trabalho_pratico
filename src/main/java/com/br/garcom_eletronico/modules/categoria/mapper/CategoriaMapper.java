@@ -34,4 +34,3 @@ public class CategoriaMapper {
         entity.setNome(dto.getNome());
     }
 }
-

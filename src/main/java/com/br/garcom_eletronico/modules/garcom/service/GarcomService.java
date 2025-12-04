@@ -47,7 +47,6 @@ public class GarcomService {
 
     private Garcom getEntity(Long id) {
         return repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Garcom not found with id " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Garcom não encontrado com id " + id));
     }
 }
-

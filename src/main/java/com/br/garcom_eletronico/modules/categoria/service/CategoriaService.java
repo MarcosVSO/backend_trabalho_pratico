@@ -51,7 +51,6 @@ public class CategoriaService {
 
     private Categoria getEntity(Long id) {
         return repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Categoria not found with id " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Categoria não encontrada com id " + id));
     }
 }
-

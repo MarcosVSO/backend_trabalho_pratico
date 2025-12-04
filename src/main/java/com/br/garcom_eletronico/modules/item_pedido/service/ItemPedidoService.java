@@ -57,7 +57,7 @@ public class ItemPedidoService {
 
     private ItemPedido getEntity(Long id) {
         return repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("ItemPedido not found with id " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("ItemPedido não encontrado com id " + id));
     }
 
     private ItemCardapio resolveItemCardapio(Long id) {
@@ -65,7 +65,7 @@ public class ItemPedidoService {
             return null;
         }
         return itemCardapioRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("ItemCardapio not found with id " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("ItemCardapio não encontrado com id " + id));
     }
 
     private Pedido resolvePedido(Long id) {
@@ -73,7 +73,6 @@ public class ItemPedidoService {
             return null;
         }
         return pedidoRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Pedido not found with id " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Pedido não encontrado com id " + id));
     }
 }
-

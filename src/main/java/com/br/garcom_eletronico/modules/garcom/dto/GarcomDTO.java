@@ -7,4 +7,3 @@ public class GarcomDTO {
     private Long id;
     private String nome;
 }
-

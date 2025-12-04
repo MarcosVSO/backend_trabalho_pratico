@@ -7,4 +7,3 @@ public class MesaDTO {
     private Integer numero;
     private Boolean disponivel;
 }
-

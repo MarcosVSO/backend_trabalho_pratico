@@ -16,6 +16,10 @@ public class ItemCardapioMapper {
         dto.setIngredientes(entity.getIngredientes());
         dto.setPreco(entity.getPreco());
         dto.setDisponivelNaCozinha(entity.getDisponivelNaCozinha());
+        if (entity.getCategoria() != null) {
+            dto.setCategoriaId(entity.getCategoria().getId());
+            dto.setCategoriaNome(entity.getCategoria().getNome());
+        }
         return dto;
     }
 
@@ -40,4 +44,5 @@ public class ItemCardapioMapper {
         entity.setDisponivelNaCozinha(dto.getDisponivelNaCozinha());
     }
 }
+
 

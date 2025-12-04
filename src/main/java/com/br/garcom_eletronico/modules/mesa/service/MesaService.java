@@ -47,7 +47,6 @@ public class MesaService {
 
     private Mesa getEntity(Integer id) {
         return repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Mesa not found with id " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Mesa não encontrada com id " + id));
     }
 }
-

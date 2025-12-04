@@ -1,5 +1,6 @@
 package com.br.garcom_eletronico.modules.item_cardapio;
 
+import com.br.garcom_eletronico.modules.categoria.Categoria;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,4 +17,7 @@ public class ItemCardapio {
     private Float preco;
 
     private Boolean disponivelNaCozinha;
+
+    @ManyToOne
+    private Categoria categoria;
 }

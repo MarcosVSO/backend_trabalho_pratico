@@ -41,5 +41,21 @@ public class PedidoController {
     public void delete(@PathVariable Long id) {
         service.delete(id);
     }
+
+    @GetMapping("/mesa/{id}")
+    public List<PedidoDTO> findPedidosByMesa(@PathVariable Integer id) {
+        return service.findPedidosByMesa(id);
+    }
+
+    @GetMapping("/status/pendente")
+    public List<PedidoDTO> findPedidosPendentes() {
+        return service.findPedidosPendentes();
+    }
+
+    @GetMapping("/tempo-medio-entrega")
+    public Double getTempoMedioEntrega() {
+        return service.getTempoMedioEntrega();
+    }
 }
+
 

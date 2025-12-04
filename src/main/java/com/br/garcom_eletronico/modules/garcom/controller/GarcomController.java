@@ -42,4 +42,3 @@ public class GarcomController {
         service.delete(id);
     }
 }
-

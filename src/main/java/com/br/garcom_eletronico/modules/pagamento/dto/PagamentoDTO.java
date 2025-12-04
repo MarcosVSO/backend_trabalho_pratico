@@ -7,4 +7,3 @@ public class PagamentoDTO {
     private Long id;
     private String tipo;
 }
-

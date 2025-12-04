@@ -47,7 +47,6 @@ public class PagamentoService {
 
     private Pagamento getEntity(Long id) {
         return repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Pagamento not found with id " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Pagamento não encontrado com id " + id));
     }
 }
-
