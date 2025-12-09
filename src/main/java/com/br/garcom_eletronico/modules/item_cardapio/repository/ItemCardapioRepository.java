@@ -11,6 +11,8 @@ public interface ItemCardapioRepository extends JpaRepository<ItemCardapio, Long
     
     List<ItemCardapio> findByCategoriaNome(String categoriaNome);
     
+    List<ItemCardapio> findByDisponivelNaCozinha(Boolean disponivelNaCozinha);
+    
     @Query("SELECT ip.itemCardapio, SUM(ip.quantidade) as total " +
            "FROM ItemPedido ip " +
            "GROUP BY ip.itemCardapio " +

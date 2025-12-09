@@ -78,6 +78,13 @@ public class ItemCardapioService {
         ItemCardapio itemCardapio = (ItemCardapio) results.get(0)[0];
         return mapper.toDto(itemCardapio);
     }
+
+    public List<ItemCardapioDTO> findByDisponivelNaCozinha(Boolean disponivel) {
+        return repository.findByDisponivelNaCozinha(disponivel)
+                .stream()
+                .map(mapper::toDto)
+                .toList();
+    }
 }
 
 

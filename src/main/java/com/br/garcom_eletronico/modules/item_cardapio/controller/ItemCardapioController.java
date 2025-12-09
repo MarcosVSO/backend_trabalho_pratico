@@ -51,6 +51,11 @@ public class ItemCardapioController {
     public ItemCardapioDTO findItemMaisPedido() {
         return service.findItemMaisPedido();
     }
+
+    @GetMapping("/cozinha-pedidos-pendentes")
+    public List<ItemCardapioDTO> findByDisponivelNaCozinha(@RequestParam Boolean disponivel) {
+        return service.findByDisponivelNaCozinha(disponivel);
+    }
 }
 
 
