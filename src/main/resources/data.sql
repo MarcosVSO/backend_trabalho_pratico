@@ -1,4 +1,3 @@
-
 -- Insert Categorias
 INSERT INTO categoria (nome) VALUES ('Bebidas');
 INSERT INTO categoria (nome) VALUES ('Pratos Principais');
@@ -6,7 +5,7 @@ INSERT INTO categoria (nome) VALUES ('Sobremesas');
 INSERT INTO categoria (nome) VALUES ('Aperitivos');
 INSERT INTO categoria (nome) VALUES ('Saladas');
 
--- Insert Mesas (numero é auto-gerado, não precisa especificar)
+-- Insert Mesas (numero é auto-gerado)
 INSERT INTO mesa (disponivel) VALUES (true);
 INSERT INTO mesa (disponivel) VALUES (true);
 INSERT INTO mesa (disponivel) VALUES (false);
@@ -71,57 +70,40 @@ INSERT INTO conta (nome) VALUES ('Conta Mesa 5');
 INSERT INTO conta (nome) VALUES ('Conta Mesa 6');
 
 -- Insert Pedidos
--- Pedido 1:
 INSERT INTO pedido (cliente_id, data_pedido, hora_entrega, conta_id, mesa_numero) 
 VALUES (1, '2024-01-15 12:15:00', '2024-01-15 12:45:00', 1, 1);
 
--- Pedido 2:
 INSERT INTO pedido (cliente_id, data_pedido, hora_entrega, conta_id, mesa_numero) 
 VALUES (2, '2024-01-15 13:10:00', '2024-01-15 13:40:00', 2, 2);
 
--- Pedido 3:
 INSERT INTO pedido (cliente_id, data_pedido, hora_entrega, conta_id, mesa_numero) 
 VALUES (3, '2024-01-15 18:15:00', NULL, 3, 3);
 
--- Pedido 4:
 INSERT INTO pedido (cliente_id, data_pedido, hora_entrega, conta_id, mesa_numero) 
 VALUES (4, '2024-01-15 19:20:00', NULL, 4, 4);
 
--- Pedido 5:
 INSERT INTO pedido (cliente_id, data_pedido, hora_entrega, conta_id, mesa_numero) 
 VALUES (5, '2024-01-15 20:00:00', '2024-01-15 20:35:00', 5, 5);
 
--- Pedido 6:
 INSERT INTO pedido (cliente_id, data_pedido, hora_entrega, conta_id, mesa_numero) 
 VALUES (1, '2024-01-15 14:00:00', '2024-01-15 14:25:00', 6, 1);
 
 -- Insert ItemPedido
--- Pedido 1 items
 INSERT INTO item_pedido (item_cardapio_id, quantidade, pedido_id) VALUES (1, 2, 1);
 INSERT INTO item_pedido (item_cardapio_id, quantidade, pedido_id) VALUES (3, 1, 1);
 INSERT INTO item_pedido (item_cardapio_id, quantidade, pedido_id) VALUES (6, 1, 1);
 
--- Pedido 2 items
 INSERT INTO item_pedido (item_cardapio_id, quantidade, pedido_id) VALUES (2, 1, 2);
 INSERT INTO item_pedido (item_cardapio_id, quantidade, pedido_id) VALUES (4, 2, 2);
 
--- Pedido 3 items
 INSERT INTO item_pedido (item_cardapio_id, quantidade, pedido_id) VALUES (5, 1, 3);
 INSERT INTO item_pedido (item_cardapio_id, quantidade, pedido_id) VALUES (1, 2, 3);
 
--- Pedido 4 items
 INSERT INTO item_pedido (item_cardapio_id, quantidade, pedido_id) VALUES (3, 1, 4);
 INSERT INTO item_pedido (item_cardapio_id, quantidade, pedido_id) VALUES (8, 1, 4);
 
--- Pedido 5 items
 INSERT INTO item_pedido (item_cardapio_id, quantidade, pedido_id) VALUES (2, 2, 5);
 INSERT INTO item_pedido (item_cardapio_id, quantidade, pedido_id) VALUES (7, 1, 5);
 
--- Pedido 6 items
 INSERT INTO item_pedido (item_cardapio_id, quantidade, pedido_id) VALUES (1, 3, 6);
 INSERT INTO item_pedido (item_cardapio_id, quantidade, pedido_id) VALUES (3, 1, 6);
-
--- Insert Pagamentos (a tabela pagamento só tem id, sem coluna tipo)
-INSERT INTO pagamento DEFAULT VALUES;
-INSERT INTO pagamento DEFAULT VALUES;
-
