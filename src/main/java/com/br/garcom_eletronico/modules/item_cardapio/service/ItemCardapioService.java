@@ -71,12 +71,9 @@ public class ItemCardapioService {
     }
 
     public ItemCardapioDTO findItemMaisPedido() {
-        List<Object[]> results = repository.findItensMaisPedidos();
-        if (results.isEmpty()) {
-            throw new ResourceNotFoundException("Nenhum item pedido encontrado");
-        }
-        ItemCardapio itemCardapio = (ItemCardapio) results.get(0)[0];
-        return mapper.toDto(itemCardapio);
+        return repository.findItemMaisPedido()
+                .map(mapper::toDto)
+                .orElseThrow(() -> new ResourceNotFoundException("Nenhum item encontrado"));
     }
 
     public List<ItemCardapioDTO> findByDisponivelNaCozinha(Boolean disponivel) {
