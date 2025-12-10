@@ -61,12 +61,9 @@ public class ClienteService {
         LocalDate hoje = LocalDate.now();
         int diaHoje = hoje.getDayOfMonth();
         int mesHoje = hoje.getMonthValue();
-        
-        return repository.findAll()
+
+        return repository.findAniversariantes(diaHoje, mesHoje)
                 .stream()
-                .filter(c -> c.getDataNascimento() != null 
-                        && c.getDataNascimento().getDayOfMonth() == diaHoje 
-                        && c.getDataNascimento().getMonthValue() == mesHoje)
                 .map(mapper::toDto)
                 .toList();
     }
