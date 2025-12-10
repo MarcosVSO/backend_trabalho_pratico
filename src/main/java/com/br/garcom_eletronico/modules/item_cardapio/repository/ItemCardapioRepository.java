@@ -13,11 +13,8 @@ public interface ItemCardapioRepository extends JpaRepository<ItemCardapio, Long
     
     List<ItemCardapio> findByDisponivelNaCozinha(Boolean disponivelNaCozinha);
     
-    @Query("SELECT ip.itemCardapio, SUM(ip.quantidade) as total " +
-           "FROM ItemPedido ip " +
-           "GROUP BY ip.itemCardapio " +
-           "ORDER BY total DESC")
-    List<Object[]> findItensMaisPedidos();
+    @Query("SELECT ip.itemCardapio FROM ItemPedido ip GROUP BY ip.itemCardapio ORDER BY SUM(ip.quantidade) DESC LIMIT 1")
+    Optional<ItemCardapio> findItemMaisPedido();
 }
 
 
